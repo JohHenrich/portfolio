@@ -1,0 +1,140 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    color: white;
+
+    h2 {
+        margin-top: 64px;
+        margin-bottom: 64px;
+        font-size: 64px;
+        font-weight: 800;
+        color: var(--secondary);
+
+        @media(max-width: 800px) {
+            font-size: 48px;
+        }
+    }
+
+
+    a {
+        color: var(--secondary);
+        text-decoration: none;
+
+        &:hover {
+            color: #2dfcd8d4;
+        }
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+
+    .mat-input-fix-boarder{
+        border-radius: 50px;
+        width: 100%;
+        max-width: 685px;
+        height: 150px;
+    }
+
+    &::ng-deep {
+
+
+
+        width: 100%;
+        max-width: 685px;
+        height: 150px;
+
+        .mat-input-element {
+            caret-color: var(--secondary) !important;
+            background-color: var(--grey) !important;
+        }
+
+        .mat-form-field-flex {
+            background-color: var(--primary) !important;
+        }
+
+        .mat-form-field-outline {
+            /*change color of underline*/
+            color: white;
+            border-radius: 50px !important;
+        }
+
+        .mat-form-field-label {
+            /*change color of label*/
+            color: white !important;
+        }
+
+
+        .mat-form-field-underline {
+            background-color: var(--secondary) !important;
+        }
+
+         .mat-form-field-flex {
+            background-color: var(--grey) !important;
+        }
+
+
+        .mat-focused {
+
+            .mat-form-field-ripple {
+                /*change color of underline when focused*/
+                background-color: var(--secondary) !important;
+            }
+
+            .mat-form-field-label {
+                /*change color of label when focused*/
+                color: var(--secondary) !important;
+            }
+
+            .mat-form-field-outline {
+                /*change color of outline*/
+                color: var(--secondary) !important;
+            }
+
+        }
+
+
+
+        textarea {
+            height: 150px;
+        }
+    }
+    
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 0 var(--grey) inset !important;
+        box-shadow: 0 0 0 0 var(--grey) inset !important;
+        -webkit-text-fill-color: white !important;
+
+    }
+
+
+    .send-mail-btn {
+        height: 150px;
+        padding: 24px 120px;
+        align-self: flex-end;
+        text-align: center;
+        transition: 0.2s;
+    }
+}
+
+
+
+.success-mail {
+    color: var(--secondary);
+    text-align: center;
+}
+
+.success-mail-btn {
+    padding: 24px 60px;
+    align-self: flex-end;
+    text-align: center;
+    transition: 0.2s;
+}

@@ -1,1 +1,186 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --primary: #Fa2759;
+    --secondary: #2Dfcd8;
+    --grey: #1c1c1c;
+    --lightgrey: #8c8c8c;
+    --space-xs: 12px;
+    --space-s: 24px;
+    --space-m: 40px;
+    --space-l: 56px;
+    --space-xl: 68px;
+    --space-xxl: 104px;
+}
+
+
+h1 {
+    font-size: 64px;
+    font-weight: 800;
+
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: var(--space-m);
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: var(--space-m);
+
+}
+
+
+html,
+body {
+    margin: 0;
+    font-family: 'Inter', Roboto, "Helvetica Neue", sans-serif;
+    font-size: 20px;
+    font-weight: regular;
+    scroll-behavior: smooth;
+}
+
+.mr-3 {
+    margin-right: 40px;
+}
+
+
+.flex-strech {
+    flex: 1 0 auto;
+}
+
+button {
+    cursor: pointer;
+    font-size: medium;
+    margin-top: var(--space-s);
+    background-color: transparent;
+}
+
+
+.btn-primary {
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn-secondary {
+    color: var(--secondary);
+    border: 2px solid var(--secondary);
+    cursor: pointer;
+    transition: 0.2s;
+
+
+    &:disabled {
+        border: 2px solid #2dfcd964;
+        color: #2dfcd964;
+        cursor: unset;
+    }
+
+    &:hover {
+        &:enabled {
+            color: black;
+            box-shadow: inset 0 0 0 2em var(--secondary);
+            transition: 0.2s;
+        }
+    }
+}
+
+/* inter-300 - latin */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    src: url('assets/fonts/inter-v12-latin-300.eot');
+    /* IE9 Compat Modes */
+    src: local(''),
+        url('assets/fonts/inter-v12-latin-300.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('assets/fonts/inter-v12-latin-300.woff2') format('woff2'),
+        /* Super Modern Browsers */
+        url('assets/fonts/inter-v12-latin-300.woff') format('woff'),
+        /* Modern Browsers */
+        url('assets/fonts/inter-v12-latin-300.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('assets/fonts/inter-v12-latin-300.svg#Inter') format('svg');
+    /* Legacy iOS */
+}
+
+/* inter-regular - latin */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('assets/fonts/inter-v12-latin-regular.eot');
+    /* IE9 Compat Modes */
+    src: local(''),
+        url('assets/fonts/inter-v12-latin-regular.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('assets/fonts/inter-v12-latin-regular.woff2') format('woff2'),
+        /* Super Modern Browsers */
+        url('assets/fonts/inter-v12-latin-regular.woff') format('woff'),
+        /* Modern Browsers */
+        url('assets/fonts/inter-v12-latin-regular.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('assets/fonts/inter-v12-latin-regular.svg#Inter') format('svg');
+    /* Legacy iOS */
+}
+
+/* inter-500 - latin */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    src: url('assets/fonts/inter-v12-latin-500.eot');
+    /* IE9 Compat Modes */
+    src: local(''),
+        url('assets/fonts/inter-v12-latin-500.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('assets/fonts/inter-v12-latin-500.woff2') format('woff2'),
+        /* Super Modern Browsers */
+        url('assets/fonts/inter-v12-latin-500.woff') format('woff'),
+        /* Modern Browsers */
+        url('assets/fonts/inter-v12-latin-500.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('assets/fonts/inter-v12-latin-500.svg#Inter') format('svg');
+    /* Legacy iOS */
+}
+
+/* inter-700 - latin */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    src: url('assets/fonts/inter-v12-latin-700.eot');
+    /* IE9 Compat Modes */
+    src: local(''),
+        url('assets/fonts/inter-v12-latin-700.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('assets/fonts/inter-v12-latin-700.woff2') format('woff2'),
+        /* Super Modern Browsers */
+        url('assets/fonts/inter-v12-latin-700.woff') format('woff'),
+        /* Modern Browsers */
+        url('assets/fonts/inter-v12-latin-700.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('assets/fonts/inter-v12-latin-700.svg#Inter') format('svg');
+    /* Legacy iOS */
+}
+
+/* inter-800 - latin */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    src: url('assets/fonts/inter-v12-latin-800.eot');
+    /* IE9 Compat Modes */
+    src: local(''),
+        url('assets/fonts/inter-v12-latin-800.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('assets/fonts/inter-v12-latin-800.woff2') format('woff2'),
+        /* Super Modern Browsers */
+        url('assets/fonts/inter-v12-latin-800.woff') format('woff'),
+        /* Modern Browsers */
+        url('assets/fonts/inter-v12-latin-800.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('assets/fonts/inter-v12-latin-800.svg#Inter') format('svg');
+    /* Legacy iOS */
+}

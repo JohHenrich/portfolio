@@ -1,0 +1,40 @@
+
+<div>
+    <h2>Contact me.</h2>
+    <h3>Get in touch via the form below, or by emailing to <a href="mailto:j.henrich@web.net">j.henrch@web.net</a></h3>
+</div>
+
+<form *ngIf="!mailSent" novalidate (ngSubmit)="submitForm(contactForm.value)"
+#contactForm="ngForm">
+    
+    <mat-form-field appearance="outline" class="form-group">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Name" name="name" ngModel #name="ngModel" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="form-group">
+        <mat-label>Email address</mat-label>
+        <input matInput placeholder="Email address" name="email" ngModel #email="ngModel" required >
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="form-group">
+        <mat-label>Massage</mat-label>
+        <textarea matInput minlength="4" class="form-control" name="message" ngModel #message="ngModel" required
+            cdkTextareaAutosize>
+        </textarea>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+    <button *ngIf="!mailSent" class="send-mail-btn btn-secondary" type="submit" [disabled]="!contactForm.valid">
+        Send
+    </button>
+
+</form>
+<h2 *ngIf="mailSent" class="success-mail">
+    Thank you for your message!
+</h2>
+<button *ngIf="mailSent" class="success-btn btn-secondary" (click)="resetForm()">
+    Send another message
+</button>

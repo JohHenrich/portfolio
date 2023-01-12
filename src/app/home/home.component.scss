@@ -1,0 +1,319 @@
+:host {
+    --red: #fa2759;
+    --green: #2dfcd8;
+    --typingSpeed: 1.5s;
+    --typingCharacters1: 3;
+    --typingCharacters2: 21;
+    --typingCharacters3: 13;
+    --typingDelay1: 2s;
+    --typingDelay2: 3.5s;
+    --typingDelay3: 5s;
+    --blinkInterval: 1s;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: calc(100vh - 64px);
+    background-color: black;
+    color: white;
+}
+
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.home-text {
+    position: absolute;
+    top: 10%;
+    left: 150px;
+    line-height: 1.5;
+
+
+    .highlight {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 0%;
+        background-color: #5c5c5c;
+    }
+
+    .changecolor {
+        color: var(--primary);
+    }
+
+
+    .insert {
+        display: inline-block;
+        color: var(--secondary);
+    }
+
+    button {
+
+        padding: 24px 100px;
+        margin-top: var(--space-s);
+
+        &:hover {
+            color: black;
+        }
+
+    }
+
+}
+
+
+.profil-pic {
+    position: absolute;
+    top: 15%;
+    right: 96px;
+    border-radius: 100%;
+}
+
+
+.scroll-arrows {
+    display: block;
+
+    -ms-transform: rotate(45deg);
+    /* IE 9 */
+    -webkit-transform: rotate(45deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    margin: 0 0 3px 4px;
+
+    width: 24px;
+    height: 24px;
+
+}
+
+
+.first,
+.second,
+.third {
+    -webkit-animation: mouse-scroll 1s infinite;
+    -moz-animation: mouse-scroll 1s infinite;
+    animation: mouse-scroll 1s infinite;
+}
+
+
+.first {
+    -webkit-animation-delay: 0.08;
+    -moz-animation-delay: 0.08s;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+    animation-delay: alternate;
+}
+
+
+.second {
+    -webkit-animation-delay: 0.16s;
+    -moz-animation-delay: 0.16s;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+    animation-delay: alternate;
+}
+
+.third {
+
+    -webkit-animation-delay: 0.24s;
+    -moz-animation-delay: 0.24s;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+    animation-delay: alternate;
+}
+
+
+
+
+
+@-webkit-keyframes mouse-scroll {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes mouse-scroll {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes mouse-scroll {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes mouse-scroll {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+.txt-dynamic1, .txt-dynamic2, .txt-dynamic3 {
+    top: 0;
+    position: relative; //animations adapts to div
+    /*outline: 2px solid green; */
+    width: max-content; 
+}
+
+.txt-dynamic1::before,
+.txt-dynamic1::after {
+    content: "";
+    position: absolute;
+    top: 22px;
+    height: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.txt-dynamic2::before,
+.txt-dynamic2::after {
+    content: "";
+    position: absolute;
+    top: 22px;
+    height: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.txt-dynamic3::before,
+.txt-dynamic3::after {
+    content: "";
+    position: absolute;
+    top: 22px;
+    height: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.txt-dynamic1::before {
+    background-color: black;
+    animation: typing var(--typingSpeed) steps(var(--typingCharacters1)) var(--typingDelay1) forwards;
+}
+
+.txt-dynamic2::before {
+    background-color: black;
+    animation: typing var(--typingSpeed) steps(var(--typingCharacters2)) var(--typingDelay2) forwards;
+}
+
+.txt-dynamic3::before {
+    background-color: black;
+    animation: typing var(--typingSpeed) steps(var(--typingCharacters3)) var(--typingDelay3) forwards;
+}
+
+.txt-dynamic1::after {
+    width: 0.125em;
+    background-color: var(--green);
+    animation: blink var(--blinkInterval) steps(var(--typingCharacters1)) infinite,
+        typingFade var(--typingSpeed) steps(var(--typingCharacters1)) var(--typingDelay1) forwards;
+}
+
+.txt-dynamic2::after {
+    width: 0.125em;
+    background-color: transparent;
+    animation: blink2 var(--blinkInterval) steps(var(--typingCharacters2)) var(--typingDelay2) infinite,
+        typingFade var(--typingSpeed) steps(var(--typingCharacters2)) var(--typingDelay2) forwards;
+}
+
+.txt-dynamic3::after {
+    width: 0.125em;
+    background-color: transparent;
+    animation: blink2 var(--blinkInterval) steps(var(--typingCharacters2)) var(--typingDelay3) infinite,
+        typingFade var(--typingSpeed) steps(var(--typingCharacters3)) var(--typingDelay3) forwards;
+}
+
+@keyframes typing {
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes blink {
+    to {
+        background: transparent;
+    }
+}
+
+@keyframes blink2 {
+    from {
+        background-color: var(--green);
+    }
+    to {
+        background-color: transparent;
+    }
+}
+
+@keyframes typingFade {
+    to {
+        left: 100%;
+        background-color: transparent;
+    }
+}
+
+
+h1 {
+    font-size: 64px;
+    font-weight: 800;
+    font-family: monospace;
+    @media (min-width:540px) and (max-width: 1200px) {
+        font-size: 48px;
+    }
+
+    @media (min-width:420px) and (max-width: 540px) {
+        font-size: 36px;
+    }
+
+    @media (min-width:360px) and (max-width: 420px) {
+        font-size: 32px;
+    }
+
+    @media(max-width: 360px) {
+        font-size: 28px;
+    }
+}
+
+

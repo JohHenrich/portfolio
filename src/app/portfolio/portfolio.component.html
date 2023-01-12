@@ -1,0 +1,15 @@
+<h2>My Portfolio</h2>
+
+<div class="btn-container">
+    <button *ngFor="let type of types; let i=index;" class="btn-primary" [class.selectedBtn]="type.selected"
+        (click)="selectBtn(i)">{{type.type}}
+    </button>
+
+</div>
+
+<div class="projects-overview">
+    <div class="project" *ngFor="let project of projects; let i = index">
+        <app-project  *ngIf="showProjects(i)" [project]="project">
+            </app-project>
+    </div>
+</div>

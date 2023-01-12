@@ -1,0 +1,35 @@
+:host {
+    display: flex;
+    justify-content: space-around;
+    background-color: #131111;
+    color: white;
+    height: 150px;
+    align-items: center;
+
+
+    div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    img {
+        &:hover {
+            background-color: var(--secondary);
+            border-radius: 50%;
+          
+        }
+    }
+
+    a {
+        text-decoration: none;
+        margin: 12px;
+        color: white;
+
+        &:hover {
+            color: var(--secondary);
+            
+        }
+
+    }
+
+}
