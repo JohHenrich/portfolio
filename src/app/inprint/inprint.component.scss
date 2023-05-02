@@ -1,20 +1,19 @@
 .impressum{
     min-height: 60vh;
     color:white;
-    background-color: #1c1c1c;
+    background-color:var( --grey);
     max-width: 100%;
     padding-left: 36px;
     padding-right: 12px;
     padding-top: 60px;
     padding-bottom: 60px;
-
 }
 
 a {
-    color:  #2Dfcd8;
+    color:  var(--secondary);
     text-decoration: none;
 
     &:hover {
-        color: #2dfcd8d4;
+        color:var(--secondary);
     }
 }

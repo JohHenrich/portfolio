@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutMeComponent implements OnInit {
 
-  public sections = [
+  public sections: { title: string; text: string; img: string; }[] = [
     {
       'title': 'MY JOURNEY BEGAN',
       'text': ' started my IT journey learning IT specialist for application management where I learned the basics of software development. ',

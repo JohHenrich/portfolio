@@ -1,8 +1,22 @@
-<mat-toolbar [class.headerDark]="darkMode">
-    <img src="assets/img/logo.png">
+<header>
+    <div class="headerbox">
+        <img routerLink="/" src="assets/img/logo.png">
 
-    <div class="flex-strech mr-3" [class.darkLinks]="darkMode"> </div>
-    <a href="" routerLink="/">HOME</a>
-    <a href="#portfolio" routerLinkActive="active">PORTFOLIO</a>
-    <a href="#aboutme" routerLinkActive="active">ABOUT ME</a>
-</mat-toolbar>
+        <div (click)="openMenu()" class="nav-container">
+            <input type="checkbox" [checked]="menuOpen" id="openSidebarMenu">
+            <div>
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+        </div>
+
+        <div class="menu" [class.responsive]="menuOpen">
+            <a (click)="hideSidebarMenu()" href="" routerLink="/">HOME</a>
+            <a (click)="hideSidebarMenu()" href="#portfolio" routerLinkActive="active">PORTFOLIO</a>
+            <a (click)="hideSidebarMenu()" href="#aboutme" routerLinkActive="active">ABOUT ME</a>
+        </div>
+    </div>
+</header>
+
+<!-- menu for mobiles -->

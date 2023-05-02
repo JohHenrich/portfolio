@@ -9,9 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 64px;
-    margin-bottom: 32px;
-    gap: 32px;
+    gap: var(--space-l);
 
     img{
         border-radius: 100%;
@@ -25,11 +23,38 @@
         max-width: 400px;
     }
 
+    @media (min-width:600px) and(max-width: 800px) {
+        img {
+            height: 280px;
+            width: 280px;
+        }
+    }
+
+    @media(min-width:360px) and(max-width: 600px) {
+        flex-direction: column;
+        gap: var(--space-m);
+    }
+
+    @media(max-width: 360px) {
+        flex-direction: column;
+
+        img {
+            height: 250px;
+            width: 250px;
+        }
+    }
 }
+
+
 hr{
     margin-left: 104px;
     margin-right: 104px;
+    margin-top: var(--space-xl);
     border-color: var(--secondary);
+    
+    @media (max-width: 600px) {
+        margin-top: var(--space-m);
+    }
 }
 
 .aboutme-details{
@@ -49,14 +74,35 @@ hr{
         width: 40px;
         height: 40px;
         padding: 24px;
-        margin-top: var(--space-xl);
-    }
+        margin-top: var(--space-l);
 
+        @media(min-width:360px) and(max-width: 600px) {
+            margin-top: var(--space-m);
+        }
+    }
+    
     h2{
         margin-top: 24px;
     }
 
     h3{
         margin-top: 24px;
+    }
+}
+
+
+[data-aos="staggered-slide-left"] {
+    transform: translateX(var(--pd-lr));
+    opacity: 0;
+    transition-property: transform, opacity;
+    transition-delay: var(--animation-delay);
+
+    &.aos-animate {
+        transform: translateX(00);
+        opacity: 1;
+    }
+    @media (max-width: 600px) {
+    transition-delay: 0;
+    
     }
 }

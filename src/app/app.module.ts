@@ -21,7 +21,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { MainPageComponent } from './main-page/main-page.component';
-import { DialogAddEntrieComponent } from './dialog-add-entrie/dialog-add-entrie.component';
 import { InprintComponent } from './inprint/inprint.component';
 import { PrivacyNoticeComponent } from './privacy-notice/privacy-notice.component';
 
@@ -39,7 +38,6 @@ import { PrivacyNoticeComponent } from './privacy-notice/privacy-notice.componen
     ContactMeComponent,
     FooterComponent,
     MainPageComponent,
-    DialogAddEntrieComponent,
     InprintComponent,
     PrivacyNoticeComponent,
 

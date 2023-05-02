@@ -7,10 +7,11 @@
 </div>
 <hr>
 <div class="aboutme-details">
-    <div *ngFor="let section of sections"  class="steps">
+    <div *ngFor="let section of sections; let i=index"   data-aos-once="true" [style.--animation-delay]="i * 300 + 'ms'" class="steps">
 
-        <img src="assets/img/{{ section.img }}">
+        <img src="assets/img/{{ section.img }}" >
         <h2> {{section.title}}</h2>
         <h3> {{section.text}}</h3>
+        
     </div>
 </div>

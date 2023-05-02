@@ -6,17 +6,17 @@
     height: 150px;
     align-items: center;
 
-
     div {
         display: flex;
         flex-direction: column;
     }
 
     img {
+        background-color: white;
+        border-radius: 100%;
         &:hover {
             background-color: var(--secondary);
-            border-radius: 50%;
-          
+            border-radius: 50%;  
         }
     }
 
@@ -29,7 +29,5 @@
             color: var(--secondary);
             
         }
-
     }
-
 }

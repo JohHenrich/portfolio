@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     ) { }
 
   ngAfterViewInit(): void {
-    this.inViewPortService.homeTabSwitch = this.homeTabSwitch.nativeElement;
+    //this.inViewPortService.homeTabSwitch = this.homeTabSwitch.nativeElement;
   }
 
   /**
@@ -30,11 +30,4 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
 }
-/*export class HomeComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}*/

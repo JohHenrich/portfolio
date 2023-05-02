@@ -1,15 +1,19 @@
 .project-img {
-    height: 320px;
-    width: 480px;
+    display: block;
+    width: 500px;
+    max-width: 100%;
+    object-fit: contain;
 }
+
 
 mat-icon {
     color: white;
-    &:hover{
-        color: var(--secondary)
-    }
 
+    &:hover {
+        color: var(--secondary);
+    }
 }
+
 
 .project-links {
     position: absolute;
@@ -22,21 +26,40 @@ mat-icon {
     align-items: center;
     justify-content: space-around;
     text-align: center;
-    font-size: 24px;
+
     line-height: 1.5;
-    padding: 24px;
+    padding:var(--space-m);
     background-color: rgba(0, 0, 0, 0.8);
 
-    a {
-        margin: 12px;
+    .title {
+        color: var(--primary);
+        font-weight: bold;
+    }
+    
+    p{
+        font-size:large;
+    }
 
-        img {
-            height: 26px;
-            width: 26px;
+    @media (min-width:420px)and(max-width: 500px) {
+        padding: var(--space-s);
+        
+        .description{
+            display: none;
         }
+   
+    }
+}
 
-        &:hover{
-            color: var(--secondary)
-        }
+
+.github-pic{
+    display:block;
+    height: 26px;
+    width: 26px;
+    background-image:url('/assets/img/github-fill-w.png');
+    background-size: cover;
+   
+
+    &:hover,:active,:focus {
+        background-image:url('/assets/img/github-fill-hover.png');
     }
 }

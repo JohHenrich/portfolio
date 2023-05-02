@@ -2,12 +2,14 @@
     <img class="project-img" src="{{'./assets/img/projects/' + project.name  + '.png'}}">
     <div class="project-links" *ngIf="hover">
 
-            <p>{{ project.description }}</p>
+            <p class="title">{{ project.name }}</p>
+            <p >{{ project.description_top }}</p>
+            <p class="description">{{ project.description }}</p>
             <div>
             <a href="{{ project.link }}">
                 <mat-icon>desktop_windows</mat-icon>
             </a>
-            <a href="{{ project.git_link }}"><img src="./assets/img/github-fill-w.png"></a>
+            <a href="{{ project.git_link }}" class="github-pic"></a>
         </div>
     </div>
 </div>
