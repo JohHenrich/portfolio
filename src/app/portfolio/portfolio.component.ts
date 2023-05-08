@@ -15,6 +15,7 @@ export class PortfolioComponent implements OnInit {
 
 
   public projects = [
+
     { 'name': 'CurrencyConverter',
      'type': 'JavaScript',
      'description_top': 'A currency clculator based on Java and RESTful API.',
@@ -41,23 +42,33 @@ export class PortfolioComponent implements OnInit {
     'description': 'A collection of relevant documents and materials that showcase my skills, qualifications, and experience',
     'link': 'https://johannes-henrich.developerakademie.net/portfolio/index.html',
     'git_link': 'https://github.com/JohHenrich/portfolio' }
+
   ]
 
+  
   constructor() { }
-
-
 
 
   ngOnInit(): void {
   }
 
+
+   /**
+   * the clicked project type is active, all others as inactive
+   * @param i - index of the selected type 
+   */
   selectBtn(i_selected: number) {
     for (let i = 0; i < this.types.length; i++) {
       this.types[i].selected = (i_selected == i);
-
     }
   }
 
+
+   /**
+   * filters the projects that match to the clicked type
+   * @param i - index of project
+   * @returns boolean - true, if project is matching to the active type
+   */
   showProjects(i: number) {
     let activeType = this.types.find(type => type.selected);
     if (activeType?.type == 'All') {

@@ -1,37 +1,45 @@
-
 <div>
     <h2>Contact me.</h2>
     <h3>Get in touch via the form below, or by emailing to <a href="mailto:j.henrich@web.net">j.henrch@web.net</a></h3>
 </div>
 
-<form *ngIf="!mailSent" novalidate (ngSubmit)="submitForm(contactForm.value)"
-#contactForm="ngForm">
-    
-    <mat-form-field appearance="outline" class="form-group">
+<form *ngIf="!mailSent" novalidate (ngSubmit)="submitForm(contactForm.value)" #contactForm="ngForm">
+    <mat-form-field appearance="outline" class="form-group" [ngClass]="{'mat-form-field-outline-valid': name.valid && (name.dirty || name.touched)}">
         <mat-label>Name</mat-label>
-        <input matInput placeholder="Name" name="name" ngModel #name="ngModel" required>
-        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline" class="form-group">
+        <input matInput minlength="3" placeholder="Name" name="name" ngModel #name="ngModel" required>
+        <mat-error *ngIf="name.invalid && (name.dirty || name.touched)">
+          Please enter your name
+        </mat-error>
+      </mat-form-field>
+      
+    <mat-form-field appearance="outline" class="form-group" [ngClass]="{'mat-form-field-outline-valid': email.valid && (email.dirty || email.touched)}">
         <mat-label>Email address</mat-label>
-        <input matInput placeholder="Email address" name="email" ngModel #email="ngModel" required >
-        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        <input matInput pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" placeholder="Email address"
+            name="email" ngModel #email="ngModel" required>
+        <mat-error *ngIf="email.invalid && (email.dirty || email.touched)">
+            Please enter a valid email address
+        </mat-error>
     </mat-form-field>
 
-    <mat-form-field appearance="outline" class="form-group">
+    <mat-form-field appearance="outline" class="form-group"  [ngClass]="{'mat-form-field-outline-valid': message.valid && (message.dirty || message.touched)}">
         <mat-label>Massage</mat-label>
-        <textarea matInput minlength="4" class="form-control" name="message" ngModel #message="ngModel" required
+        <textarea matInput minlength="8" class="form-control" name="message" ngModel #message="ngModel" required
             cdkTextareaAutosize>
         </textarea>
-        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        <mat-error *ngIf="message.invalid">Please enter a message</mat-error>
     </mat-form-field>
 
-    <button *ngIf="!mailSent" class="send-mail-btn btn-secondary" type="submit" [disabled]="!contactForm.valid">
+
+
+    <button *ngIf="!mailSent" class="send-mail-btn btn-secondary" type="submit" [disabled]="!contactForm.valid"
+        id="sendMailBtn"
+        [ngStyle]="{'border': contactForm.valid ? '2px solid #2Dfcd8' : (contactForm.dirty ? '2px solid #f44336' : '2px solid #2Dfcd8'), 'color': contactForm.valid ? '#2Dfcd8' : (contactForm.dirty ? '#f44336' : '')}">
         Send
     </button>
 
 </form>
+
+
 <h2 *ngIf="mailSent" class="success-mail">
     Thank you for your message!
 </h2>

@@ -33,12 +33,22 @@ form {
     display: flex;
     flex-direction: column;
 
-    .mat-input-fix-boarder{
+    .mat-input-fix-boarder {
         border-radius: 50px;
         width: 100%;
         max-width: 685px;
         height: 150px;
     }
+
+    .mat-input-element {
+        caret-color: var(--secondary) !important;
+        background-color: var(--grey) !important;
+    }
+
+    .mat-form-field-flex {
+        background-color: var(--primary) !important;
+    }
+
 
     &::ng-deep {
 
@@ -46,19 +56,10 @@ form {
         max-width: 685px;
         height: 150px;
 
-        .mat-input-element {
-            caret-color: var(--secondary) !important;
-            background-color: var(--grey) !important;
-        }
-
-        .mat-form-field-flex {
-            background-color: var(--primary) !important;
-        }
-
         .mat-form-field-outline {
             /*change color of underline*/
-            color: white;
-            border-radius: 50px !important;
+            color: rgb(255, 255, 255);
+            // border-radius: 50px !important;
         }
 
         .mat-form-field-label {
@@ -70,7 +71,7 @@ form {
             background-color: var(--secondary) !important;
         }
 
-         .mat-form-field-flex {
+        .mat-form-field-flex {
             background-color: var(--grey) !important;
         }
 
@@ -90,21 +91,34 @@ form {
                 /*change color of outline*/
                 color: var(--secondary) !important;
             }
+        }
 
+        .mat-form-field-outline-valid {
+            .mat-form-field-outline {
+                color: var(--secondary) !important;
+
+            }
         }
 
         textarea {
             height: 150px;
         }
-    } 
+    }
+
+
 
     input:-webkit-autofill,
     input:-webkit-autofill:hover,
     input:-webkit-autofill:focus,
     input:-webkit-autofill:active {
-        -webkit-box-shadow: 0 0 0 0 var(--grey) inset !important;
-        box-shadow: 0 0 0 0 var(--grey) inset !important;
+        -webkit-box-shadow: 0 0 0 30px var(--grey) inset !important;
+        box-shadow: 0 0 0 30px var(--grey) inset !important;
         -webkit-text-fill-color: white !important;
+    }
+
+
+    .valid-input {
+        color: var(--secondary) !important;
     }
 
     .send-mail-btn {
@@ -124,6 +138,7 @@ form {
         }
     }
 }
+
 
 
 .success-mail {

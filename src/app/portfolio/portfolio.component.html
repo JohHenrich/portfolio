@@ -9,7 +9,7 @@
 
 <div class="projects-overview">
     <div class="project" *ngFor="let project of projects; let i = index">
-        <app-project  *ngIf="showProjects(i)" [project]="project">
+        <app-project data-aos="fade-in" data-aos-offset="150" *ngIf="showProjects(i)" [project]="project">
             </app-project>
     </div>
 </div>
