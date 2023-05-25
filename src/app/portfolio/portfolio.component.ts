@@ -20,6 +20,7 @@ export class PortfolioComponent implements OnInit {
      'type': 'JavaScript',
      'description_top': 'A currency clculator based on Java and RESTful API.',
      'description': 'The tool allows users to convert the value of one currency into another currency based on current exchange rates',
+     'link': 'https://johannes-henrich.developerakademie.net/currencyAPI/index.html',
      'git_link': 'https://github.com/JohHenrich/currencyAPI' },
 
     { 'name': 'RingofFire',

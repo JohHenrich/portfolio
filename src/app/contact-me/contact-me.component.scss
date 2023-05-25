@@ -152,4 +152,8 @@ form {
     align-self: flex-end;
     text-align: center;
     transition: 0.2s;
+
+    @media (max-width:600px) {      
+        padding: 24px 30px;
+    }
 }
